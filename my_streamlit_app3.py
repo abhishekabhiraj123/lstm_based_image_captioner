@@ -11,11 +11,11 @@ vgg16_model = VGG16(weights="imagenet")
 vgg16_model = tf.keras.Model(inputs=vgg16_model.inputs, outputs=vgg16_model.layers[-2].output)
 
 # Load your trained model
-model_path = '/content/sample_data/mymodel1.h5'  # Update with the path to your model file
+model_path = 'mymodel1.h5'  # Update with the path to your model file
 model = tf.keras.models.load_model(model_path)
 
 # Load the tokenizer
-tokenizer_path = '/content/tokenizer.pkl'  # Update with the path to your tokenizer file
+tokenizer_path = 'tokenizer.pkl'  # Update with the path to your tokenizer file
 with open(tokenizer_path, 'rb') as tokenizer_file:
     tokenizer = pickle.load(tokenizer_file)
     
