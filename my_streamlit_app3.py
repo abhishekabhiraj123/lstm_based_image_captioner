@@ -11,13 +11,16 @@ vgg16_model = VGG16(weights="imagenet")
 vgg16_model = tf.keras.Model(inputs=vgg16_model.inputs, outputs=vgg16_model.layers[-2].output)
 
 # Load your trained model
-model_path = 'mymodel1.h5'  # Update with the path to your model file
-model = tf.keras.models.load_model(model_path)
+model = tf.keras.models.load_model('mymodel1.h5')
+# model_path = 'mymodel1.h5'  # Update with the path to your model file
+# model = tf.keras.models.load_model(model_path)
 
 # Load the tokenizer
-tokenizer_path = 'tokenizer.pkl'  # Update with the path to your tokenizer file
-with open(tokenizer_path, 'rb') as tokenizer_file:
+with open('tokenizer.pkl', 'rb') as tokenizer_file:
     tokenizer = pickle.load(tokenizer_file)
+# tokenizer_path = 'tokenizer.pkl'  # Update with the path to your tokenizer file
+# with open(tokenizer_path, 'rb') as tokenizer_file:
+#     tokenizer = pickle.load(tokenizer_file)
     
 # Set custom web page title
 st.set_page_config(page_title="Caption Generator App", page_icon="📷")
